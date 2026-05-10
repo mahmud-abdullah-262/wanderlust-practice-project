@@ -1,0 +1,31 @@
+import Link from 'next/link';
+import React from 'react';
+
+import Image from 'next/image';
+
+const Navbar = () => {
+  return (
+    <div className='w-11/12 mx-auto p-4 flex justify-between items-center'>
+      <ul className='flex gap-2'>
+        <li><Link href={'/'}>Home</Link></li>
+        <li><Link href={'/destinations'}>Destinations</Link></li>
+        <li><Link href={'/mybookings'}>My Bookings</Link></li>
+        <li><Link href={'/admin'}>Admin</Link></li>
+      </ul>
+      <Image
+      src='/assets/Wanderlast.png'
+      width={150}
+      height={150}
+      alt='logo'
+      />
+       <ul className='flex gap-2'>
+        <li><Link href={'/profile'}>Profile</Link></li>
+        <li><Link href={'/login'}>Login</Link></li>
+        <li><Link href={'/signup'}>SignUp</Link></li>
+      </ul>
+
+    </div>
+  );
+};
+
+export default Navbar;
