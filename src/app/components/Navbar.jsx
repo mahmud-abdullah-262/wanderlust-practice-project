@@ -8,9 +8,9 @@ const Navbar = () => {
     <div className='w-11/12 mx-auto p-4 flex justify-between items-center'>
       <ul className='flex gap-2'>
         <li><Link href={'/'}>Home</Link></li>
-        <li><Link href={'/destinations'}>Destinations</Link></li>
+        <li><Link href={'/destination'}>Destinations</Link></li>
         <li><Link href={'/mybookings'}>My Bookings</Link></li>
-        <li><Link href={'/admin'}>Admin</Link></li>
+        <li><Link href={'/add-destination'}>Add Destination</Link></li>
       </ul>
       <Image
       src='/assets/Wanderlast.png'
