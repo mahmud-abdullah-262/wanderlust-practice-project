@@ -1,10 +1,12 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import {ArrowLeftToLine, CalendarXmark, MapPin} from '@gravity-ui/icons';
 import { EditModal } from '@/app/components/EditModal';
-import { Button } from '@heroui/react';
+import { Button, DateField } from '@heroui/react';
 import { DeleteModal } from '@/app/components/DeleteModal';
+import BookingCard from '@/app/components/BookingCard';
 
 const DestinationDetailsPage = async ({params}) => {
   const {id} = await params;
@@ -22,7 +24,7 @@ const DestinationDetailsPage = async ({params}) => {
           </div>
         
         </div>
-    <div className="card bg-base-100 h-screen shadow-sm md:w-11/12 lg:w-7/12 mx-auto">
+    <div className="card bg-base-100 h-auto shadow-sm md:w-11/12 lg:w-7/12 mx-auto">
   <figure>
     <Image
       src={imageUrl}
@@ -42,11 +44,7 @@ const DestinationDetailsPage = async ({params}) => {
          <p className='text-sm'>{description}</p>
       </div>
      
-        <div className='card shadow'>
-           <p className='text-accent'><span className='font-bold text-3xl '>${price}</span>/person</p>
-           <p className='border border-gray-100'>{departureDate}</p>
-           <button className='btn btn-accent p-4 w-full'>Book Now</button>
-        </div>
+       <BookingCard data={data}/>
        
 
      

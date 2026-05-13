@@ -32,3 +32,18 @@ export const AddDestination = async (formData) => {
   console.log('after post', data);
   redirect('/destination')
 }
+
+
+export const cancelBooking = async (id) => {
+
+const res = await fetch(`http://localhost:5000/booking/${id}`, {
+  method: 'delete'
+})
+const data = await res.json()
+console.log('after delete', data)
+if(data.deletedCount > 0){
+  revalidatePath('/mybookings');
+ 
+}
+
+}

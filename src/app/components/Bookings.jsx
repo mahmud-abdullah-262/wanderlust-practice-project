@@ -1,22 +1,20 @@
 import Image from 'next/image';
-import {CalendarXmark, MapPin} from '@gravity-ui/icons';
+import {CalendarXmark, MapPin, TrashBin} from '@gravity-ui/icons';
 import Link from 'next/link';
+import { Button } from '@heroui/react';
+import { DeleteModal } from './DeleteModal';
+import { DeleteBooking } from './DeleteBooking';
 
-
-
-
-const DestinationCard = ({destination}) => {
-  const {_id, destinationName, country, category, price, duration, departureDate, imageUrl, description } = destination
+const Bookings = ({booking}) => {
+  const {_id, destinationName, country, category, price, duration, departure, imageUrl, description } = booking
   return (
-    <>
-  
-    <div className="card bg-base-100  shadow-sm">
+    <div className="flex gap-4 bg-base-100  shadow-xl my-2 rounded-2xl">
   <figure>
     <Image
       src={imageUrl}
       alt={destinationName}
-      width={300}
-      height={400} 
+      width={200}
+      height={200} 
       className='w-full object-cover object-center'
       />
       
@@ -26,22 +24,23 @@ const DestinationCard = ({destination}) => {
     <div className='flex justify-between items-center'>
       <div>
         <h2 className="card-title">{destinationName}</h2>
+        <p>Departure: {new Date(departure).toLocaleDateString()}</p>
         <p className='flex gap-1 items-center' ><CalendarXmark/> {duration}</p>
+      
       </div>
       <div>
+        <DeleteBooking booking={booking}></DeleteBooking>
         <p><span className='font-bold text-3xl'>${price}</span>/person</p>
       </div>
     </div>
     
-    <p>{description}</p>
+  
     <div className="card-actions justify-end">
-    <Link href={`/destination/${_id}`}>  <button className="btn btn-primary rounded-full">Book Now</button></Link>
+    
     </div>
   </div>
 </div>
-    </>
-    
   );
 };
 
-export default DestinationCard;
+export default Bookings;
