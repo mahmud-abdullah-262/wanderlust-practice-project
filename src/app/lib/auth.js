@@ -7,7 +7,7 @@ const client = new MongoClient(process.env.MONGODB_URI);
 const db = client.db("wandarlast-db");
 export const auth = betterAuth({
   trustedOrigins: [
-    "https://wanderlust-practice-project.vercel.app"
+    "https://wanderlust-practice-project-ifquwf2ym.vercel.app/"
   ],
   emailAndPassword: { 
     enabled: true, 
