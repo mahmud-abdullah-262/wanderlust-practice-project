@@ -4,7 +4,7 @@ import { redirect } from "next/navigation"
 
 export const deleteDestination = async (id) => {
 
-const res = await fetch(`http://localhost:5000/destination/${id}`, {
+const res = await fetch(`http://localhost:5000/destination/${id}`, {  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
   method: 'delete'
 })
 const data = await res.json()
@@ -21,7 +21,7 @@ export const AddDestination = async (formData) => {
   const destination = Object.fromEntries(formData.entries())
   console.log(destination, 'destination');
 
-  const res = await fetch('http://localhost:5000/destination', {
+  const res = await fetch('http://localhost:5000/destination', {  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
    method: 'POST',
    headers: {
     'content-type' : 'application/json'
@@ -36,7 +36,7 @@ export const AddDestination = async (formData) => {
 
 export const cancelBooking = async (id) => {
 
-const res = await fetch(`http://localhost:5000/booking/${id}`, {
+const res = await fetch(`http://localhost:5000/booking/${id}`, {  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
   method: 'delete'
 })
 const data = await res.json()

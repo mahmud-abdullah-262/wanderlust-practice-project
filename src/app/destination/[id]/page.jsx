@@ -7,10 +7,20 @@ import { EditModal } from '@/app/components/EditModal';
 import { Button, DateField } from '@heroui/react';
 import { DeleteModal } from '@/app/components/DeleteModal';
 import BookingCard from '@/app/components/BookingCard';
+import { auth } from '@/app/lib/auth';
+import { headers } from 'next/headers';
 
 const DestinationDetailsPage = async ({params}) => {
   const {id} = await params;
-  const res = await fetch(`http://localhost:5000/destination/${id}`)
+  const {token} = await auth.api.getToken({
+    headers: await headers()
+  })
+  console.log(token)
+  const res = await fetch(`http://localhost:5000/destination/${id}`, {  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
+    headers: {
+      authorization : `Bearer ${token}`
+    }
+  })
   const data = await res.json()
 
    const {_id, destinationName, country, category, price, duration, departureDate, imageUrl, description } = data;

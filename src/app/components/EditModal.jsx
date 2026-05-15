@@ -13,7 +13,7 @@ export function EditModal({data}) {
   const editedDestination = Object.fromEntries(formData.entries())
   console.log(editedDestination, 'editedDestination');
 
-  const res = await fetch(`http://localhost:5000/destination/${_id}`, {
+  const res = await fetch(`http://localhost:5000/destination/${_id}`, {  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
    method: 'PATCH',
    headers: {
     'content-type' : 'application/json'

@@ -40,7 +40,7 @@ const BookingCard = ({data}) => {
     console.log(bookingData)
 
     // তৈরি করা ডাটা ডেটাবেজে পাঠানো। ব্যাকেন্ডে আগে এপিআই তৈরি করা হয়েছে
-     const res = await fetch('http://localhost:5000/booking', {
+     const res = await fetch('http://localhost:5000/booking', {  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
    method: 'POST',
    headers: {
     'content-type' : 'application/json'

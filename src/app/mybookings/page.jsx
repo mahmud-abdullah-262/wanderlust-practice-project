@@ -10,7 +10,7 @@ const MyBookingPage = async () => {
 })
     const user = session?.user;
     // console.log(session, 'session')
-  const res = await fetch(`http://localhost:5000/booking/${user?.id}`)
+  const res = await fetch(`http://localhost:5000/booking/${user?.id}`)  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
   const bookings = await res.json()
   console.log(bookings, 'bookings')
   
