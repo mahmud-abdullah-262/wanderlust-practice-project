@@ -21,6 +21,10 @@ const BookingCard = ({data}) => {
 
   //  বুকিং সাবমিট বাটনে ক্লিক হলে পরে যা হবে
    const handleBooking = async () => {
+    // client componente টোকেন তৈরি
+    const {data: tokenData} = await authClient.token()
+    console.log(tokenData, 'tokenData')
+
     // নতুন বুকিং অবজেক্ট তৈরি
     const bookingData = {
       userId : user?.id,
@@ -40,10 +44,11 @@ const BookingCard = ({data}) => {
     console.log(bookingData)
 
     // তৈরি করা ডাটা ডেটাবেজে পাঠানো। ব্যাকেন্ডে আগে এপিআই তৈরি করা হয়েছে
-     const res = await fetch('http://localhost:5000/booking', {  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
+     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/booking`, {  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
    method: 'POST',
    headers: {
-    'content-type' : 'application/json'
+    'content-type' : 'application/json',
+    authorization: `Bearer ${tokenData?.token}` 
    },
    body: JSON.stringify(bookingData)
   });

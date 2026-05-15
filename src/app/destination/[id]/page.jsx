@@ -16,7 +16,7 @@ const DestinationDetailsPage = async ({params}) => {
     headers: await headers()
   })
   console.log(token)
-  const res = await fetch(`http://localhost:5000/destination/${id}`, {  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/destination/${id}`, {  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
     headers: {
       authorization : `Bearer ${token}`
     }

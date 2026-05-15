@@ -2,7 +2,8 @@ import React from 'react';
 import DestinationCard from '../components/DestinationCard';
 
 const destinationPage = async () => {
-  const res = await fetch('http://localhost:5000/destination')  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
+  console.log("ENV VALUE:", process.env.NEXT_PUBLIC_SERVER)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/destination`)  // এখানে ডেপ্লয় লিঙ্ক দিতে হবে
   const data = await res.json()
   console.log(data, 'client side data')
   return (

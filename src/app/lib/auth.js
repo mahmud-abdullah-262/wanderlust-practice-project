@@ -3,9 +3,12 @@ import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { jwt } from "better-auth/plugins";
 // ekhane error hoye thake, dirrect string dite hobe
-const client = new MongoClient("mongodb+srv://wandarlast-db:tvQhMOClGZUzpYqz@cluster0.ujysbie.mongodb.net/?appName=Cluster0");
+const client = new MongoClient(process.env.MONGODB_URI);
 const db = client.db("wandarlast-db");
 export const auth = betterAuth({
+  trustedOrigins: [
+    "https://wanderlust-practice-project.vercel.app"
+  ],
   emailAndPassword: { 
     enabled: true, 
   },

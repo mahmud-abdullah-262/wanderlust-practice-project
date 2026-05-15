@@ -11,7 +11,7 @@ const handleSubmit = async (e) => {
   const destination = Object.fromEntries(formData.entries())
   console.log(destination, 'destination');
 
-  const res = await fetch('http://localhost:5000/destination', {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/destination`, {
    method: 'POST',
    headers: {
     'content-type' : 'application/json'
