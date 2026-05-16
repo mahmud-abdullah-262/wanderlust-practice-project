@@ -8,7 +8,7 @@ import { DeleteBooking } from './DeleteBooking';
 const Bookings = ({booking}) => {
   const {_id, destinationName, country, category, price, duration, departure, imageUrl, description } = booking
   return (
-    <div className="flex gap-4 bg-base-100  shadow-xl my-2 rounded-2xl">
+    <div className="flex justify-between gap-4 bg-base-100  shadow-xl my-2 rounded-2xl">
   <figure>
     <Image
       src={imageUrl}
@@ -19,25 +19,24 @@ const Bookings = ({booking}) => {
       />
       
   </figure>
-  <div className="card-body">
-    <p className='flex gap-2 items-center'><MapPin></MapPin>{country} </p>
-    <div className='flex justify-between items-center'>
+  <div className="flex flex-1 justify-between gap-40 items-start ">
+  
+    <div className='flex justify-between items-start flex-1 h-full '>
       <div>
+          <p className='flex gap-2 items-center'><MapPin></MapPin>{country} </p>
         <h2 className="card-title">{destinationName}</h2>
         <p>Departure: {new Date(departure).toLocaleDateString()}</p>
         <p className='flex gap-1 items-center' ><CalendarXmark/> {duration}</p>
       
       </div>
-      <div>
+      <div className=' h-full px-10 flex flex-col gap-4'>
         <DeleteBooking booking={booking}></DeleteBooking>
         <p><span className='font-bold text-3xl'>${price}</span>/person</p>
       </div>
     </div>
     
   
-    <div className="card-actions justify-end">
     
-    </div>
   </div>
 </div>
   );

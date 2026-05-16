@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import {CalendarXmark, MapPin} from '@gravity-ui/icons';
+import {ArrowUpRightFromSquare, CalendarXmark, MapPin} from '@gravity-ui/icons';
 import Link from 'next/link';
 
 
@@ -29,13 +29,13 @@ const DestinationCard = ({destination}) => {
         <p className='flex gap-1 items-center' ><CalendarXmark/> {duration}</p>
       </div>
       <div>
-        <p><span className='font-bold text-3xl'>${price}</span>/person</p>
+        <p><span className='font-bold text-xl'>${price}</span>/person</p>
       </div>
     </div>
     
-    <p>{description}</p>
-    <div className="card-actions justify-end">
-    <Link href={`/destination/${_id}`}>  <button className="btn btn-primary rounded-full">Book Now</button></Link>
+   
+    <div className="card-actions">
+    <Link className='text-cyan-400 flex gap-1' href={`/destination/${_id}`}> Book Now <ArrowUpRightFromSquare/> </Link>
     </div>
   </div>
 </div>

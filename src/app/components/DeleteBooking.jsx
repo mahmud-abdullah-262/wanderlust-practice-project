@@ -12,7 +12,7 @@ export function DeleteBooking({booking}) {
   }
   return (
     <AlertDialog>
-      <Button variant="danger">Delete Booking</Button>
+      <Button variant="outline" className={'rounded-none border-red-400 text-red-400 text-xs'} >Delete Booking</Button>
       <AlertDialog.Backdrop>
         <AlertDialog.Container>
           <AlertDialog.Dialog className="sm:max-w-[400px]">

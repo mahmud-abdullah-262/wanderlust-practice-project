@@ -24,7 +24,7 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className=" bg-white/30 flex justify-between gap-5 w-full items-center">
+      <div className=" bg-white/30 hidden md:flex justify-between gap-5 w-full items-center">
         <div className="px-3">
           <h3 className="text-sm">Location</h3>
           <p className="text-xs">Address, City or Zip</p>
