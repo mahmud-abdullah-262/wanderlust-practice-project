@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌍 Wanderlust — Travel Booking Web Application
 
-## Getting Started
+A full-stack travel booking platform where users can explore destinations, filter trips by budget and group size, and manage their bookings — all in one place.
 
-First, run the development server:
+🔗 **Live Demo:** [wanderlust-practice-project.vercel.app](https://wanderlust-practice-project.vercel.app/)
+
+---
+
+## 📸 Overview
+
+Wanderlust is a practice full-stack project built to simulate a real-world travel booking experience. It features destination listings, a booking system, user authentication,— designed with both usability and scalability in mind.
+
+---
+
+## ✨ Features
+
+- 🗺️ **Browse Destinations** — Explore curated travel destinations with details on duration, price, and location
+
+- 📅 **Booking System** — Book trips and manage reservations from a personal dashboard
+- 🔐 **User Authentication** — Secure signup and login flow
+- ➕ **Add Destinations** — Authenticated users can submit new destinations
+- 📱 **Responsive Design** — Works seamlessly across desktop and mobile
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Next.js** — React framework for server-side rendering and routing
+- **Tailwind CSS** — Utility-first CSS for styling
+
+### Backend
+- **Node.js** — JavaScript runtime
+- **Express.js** — RESTful API server
+
+### Database
+- **MongoDB Atlas** — Cloud-hosted NoSQL database
+
+### Deployment
+- **Vercel** — Frontend deployment and hosting
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js v18+
+- npm or yarn
+- MongoDB Atlas account
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/mahmud-abdullah-262/wanderlust-practice-project.git
+cd wanderlust
+
+# Install frontend dependencies
+cd client
+npm install
+
+# Install backend dependencies
+cd ../server
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Create a `.env` file in the `server` directory:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+MONGODB_URI=your_mongodb_atlas_connection_string
+PORT=5000
+JWT_SECRET=your_jwt_secret
+```
 
-## Learn More
+Create a `.env.local` file in the `client` directory:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Running the App
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Start the backend server
+cd server
+npm run dev
 
-## Deploy on Vercel
+# In a new terminal, start the frontend
+cd client
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Visit `http://localhost:3000` to view the app.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📁 Project Structure
+
+```
+wanderlust/
+├── client/                 # Next.js frontend
+│   ├── app/
+│   │   ├── destination/    # Destination listing & detail pages
+│   │   ├── mybookings/     # User bookings dashboard
+│   │   ├── add-destination/
+│   │   ├── login/
+│   │   └── signup/
+│   └── public/assets/
+│
+└── server/                 # Express.js backend
+    ├── routes/             # API route handlers
+    ├── middleware/         # Auth & error middleware
+    └── server.js
+```
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/destinations` | Fetch all destinations |
+| GET | `/api/destinations/:id` | Fetch a single destination |
+| POST | `/api/destinations` | Add a new destination |
+| POST | `/api/bookings` | Create a booking |
+| GET | `/api/bookings/user/:id` | Get bookings by user |
+| POST | `/api/auth/signup` | Register a new user |
+| POST | `/api/auth/login` | Login user |
+
+---
+
+## 🎯 What I Learned
+
+- Designing and structuring a RESTful API with **Express.js**
+- Connecting a Node.js server to **MongoDB Atlas** 
+- Building full-stack features end-to-end: auth, CRUD, and data relationships
+- Deploying a Next.js app on **Vercel**
+- Managing environment variables and keeping secrets secure
+
+---
+
+## 🔮 Future Improvements
+
+- [ ] Payment gateway integration
+- [ ] Review and rating system for destinations
+- [ ] Admin dashboard for managing listings
+- [ ] Email confirmation on booking
+- [ ] Advanced search with map view
+
+---
+
+## 👤 Author
+
+Built with ❤️ as a full-stack practice project.
+
+---
+
+
