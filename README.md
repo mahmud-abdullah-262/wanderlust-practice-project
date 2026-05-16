@@ -1,3 +1,8 @@
+
+<img width="1104" height="976" alt="lustro-Gemini_Generated_Image_uc6n3fuc6n3fuc6n" src="https://github.com/user-attachments/assets/77dab8c6-40f8-4995-9e61-07a9df2847b3" />
+<img width="1024" height="1024" alt="Gemini_Generated_Image_sg423usg423usg42" src="https://github.com/user-attachments/assets/60537211-6347-4b6b-af9e-bf21d9182763" />
+
+
 # 🌍 Wanderlust — Travel Booking Web Application
 
 A full-stack travel booking platform where users can explore destinations, filter trips by budget and group size, and manage their bookings — all in one place.
